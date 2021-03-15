@@ -1,0 +1,1584 @@
+* {
+    box-sizing: border-box;
+}
+
+//Variables
+$support: #4183d7;
+$support-hover: #2a6ec6;
+$contact: #999aa2;
+$contact-hover: #84858f;
+$design: #926fb1;
+$design-hover: #7e57a0;
+$it: #4183d7;
+$it-hover: #286abd;
+$telecom: #d64541;
+$telecom-hover: #c42e2a;
+$software: #67809f;
+$software-hover: #526781;
+$marketing: #2ecc71;
+$marketing-hover: #25a25a;
+$cyber: #f62459;
+$cyber-hover: #e80a42;
+$brand-color: #333645;
+//
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.top-page {
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+                                       
+.page-spacer {                             //==========    
+    margin-left: -15px;                    // This is used to align the logo and header section to be slightly wider.
+    margin-right: -15px;                   //==========
+}
+
+.no-pad {                                  //==========
+    padding: 0px;                          //  class to give no padding to elements.
+}                                          //==========
+
+.btn:focus, .btn:active {                  //==========
+    outline: none !important;              // This code is to remove the blue glow from bootstrap btn class.
+    box-shadow: none !important;           //==========
+}
+
+.btn {                                     //==========
+    transition: none;                      // This code is to turn off bootstraps default button transition effects.
+}                                          //==========
+
+//header section
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+    height: 110px;
+    .brand-logo{ 
+        img {
+        width: 100%;
+        max-height: 64.5px;
+        max-width: 370px;
+        height: auto;
+        }
+    }
+}
+
+.action-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 724px;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 56px;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+    }
+    .support-btn {
+        background-color: $support;
+        width: 145px;
+        &:hover {
+            color: #fff;
+            background-color: $support-hover;
+        }
+    }
+    .contact-btn {
+        background-color: $contact;
+        width: 152px;
+        &:hover {
+            color: #fff;
+            background-color: $contact-hover;
+        }
+    }
+    .search-bar {
+        width: 240px;
+        height: 56px;
+        border: 1px solid #ccc;
+        border-radius: 3px 0px 0px 3px;
+        padding-left: 15px;
+        font-size: 14px;
+    }
+    .search-btn {
+        width: 63px;
+        height: 56px;
+        background-color: $contact;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        color: #fff;
+        font-size: 23px;
+        margin-right: -20px;
+        &:hover {
+            background-color: $contact-hover;
+        }
+    } 
+    div {
+        display: flex;
+        align-items: center;
+    } 
+}
+
+.hidden-phone {
+    i {
+        display: none;
+        color: #000;
+    }
+}
+
+//off canvas menu ======
+
+.mburger {
+    width: 63px;
+    --mb-bar-height: 3px;
+    --mb-bar-width: 0.5;
+    --mb-bar-spacing: 6px;
+    margin-left: 0px;
+}
+
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    height: 56px;
+    width: 63px;
+    background-color: $brand-color;
+    border-radius: 3px;
+    &:hover {
+        background-color: #191a22;
+    }
+    a {
+        text-decoration: none;
+    }
+    .burger-text {
+        width: 100%;
+        height: 16px;
+        font-size: 12px;
+        padding-bottom: 10px;
+        margin: 0px;
+    }
+}
+
+.mm-menu {                                                                                // changes the width of the off canvas menu.
+    width: 80%;
+    min-width: 140px;
+    max-width: 333px; 
+}
+
+.mm-navbar__title,          //hides plugin title.
+.mm-navbar_sticky {
+    display: none;
+}
+
+nav {
+    text-transform: uppercase;
+    --mm-color-background: #333645;
+    --mm-color-text: #fff;
+    .menu-title {
+        padding: 20px;
+    }
+    .menu-item {
+        width: 100%;
+        font-size: 14px;
+        padding: 15px 20px;
+        background-color: rgba(0,0,0,.25);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    i {
+        padding-top: 5px;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+    ul {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    }
+}
+
+.menu-wrapper {
+    flex-direction: column;
+}
+
+.parent:hover .parent-highlight {                                    // highlight menu title when hovering over menu item
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.covid,
+.menu-contact,
+.menu-design {
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.mm-listitem__text {
+    padding: 0px;
+}
+
+
+.hidden-mobile-menu {
+    padding: 0px 21px;
+    flex-direction: column;
+    border-color: transparent;
+    display: none;
+    .mobile-spacer {
+        margin-bottom: 20px;
+    }
+    .menu-contact {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        outline: 1px solid rgba(0,0,0,.25);
+        padding: 20px 0 20px;
+        margin-top: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+    .menu-design {
+        text-align: center;
+        padding: 20px 0 20px;
+        font-size: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        outline: 1px solid rgba(0,0,0,.25);
+        small {
+            font-size: 10px;
+        }
+        i {
+            font-size: 20px;
+            padding: 0 0 5px 0;
+        }
+    }
+    .mobile-item {
+        padding: 10px;
+        background-color: rgba(0,0,0,.25);
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .list-top {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .list-bottom {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}
+
+//================
+
+.hidden-search-bar {
+    display: none;
+    margin-bottom: 20px;
+    input {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 100%;
+        height: 47px;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 5px 40px 5px 15px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin-left: -30px;
+    }
+    button {
+        padding: 0px;
+    }
+}
+
+// Navigation Section
+
+.nav-wrapper {
+    background-color: $brand-color;
+}
+
+.nav-bar {
+    display: flex;
+    .nav-item{
+        height: 99px;
+    }
+    .nav-parent-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: -5px;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        span {
+            font-size: 20px;
+        }
+        small {
+            margin: 8px 0px -10px 0px;
+        }
+        i {
+            font-size: 20px;
+        }
+    }
+}
+
+.web-icon {
+    color: $design;
+}
+.it-icon {
+    color: $it;
+}
+.telecom-icon {
+    color: $telecom;
+}
+.software-icon {
+    color: $software;
+}
+.marketing-icon {
+    color: $marketing;
+}
+.cyber-icon {
+    color: $cyber;
+}
+
+//navigation sub menu.
+
+
+
+
+.design-hover:hover .design-highlight {          //lets the link be highlighted while hovering over sub menu.
+    background-color: $design;
+    i {
+        color: #fff;
+    }
+}
+.it-hover:hover .it-highlight {
+    background-color: $it;
+    i {
+        color: #fff;
+    }
+}
+.telecom-hover:hover .telecom-highlight {
+    background-color: $telecom;
+    i {
+        color: #fff;
+    }
+}
+.software-hover:hover .software-highlight {
+    background-color: $software;
+    i {
+        color: #fff;
+    }
+}
+.marketing-hover:hover .marketing-highlight {
+    background-color: $marketing;
+    i {
+        color: #fff;
+    }
+}
+.cyber-hover:hover .cyber-highlight {
+    background-color: $cyber;
+    i {
+        color: #fff;
+    }
+}                                                //====
+
+.nav-sub-menu-wrapper {
+    z-index: 99;
+    width: 2000px;
+    position: absolute;
+    top: 98px;
+    .container {
+        padding: 0px;
+    }
+}
+
+.nav-sub-menu {
+    color: #fff;
+    width: 100vw;
+    height: 45px;
+    justify-content: start;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.nav-item {
+    .nav-sub-menu {
+        a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .text-pad {
+            padding-left: 30px;
+        }
+    }
+    .sub-menu-a-line {
+        margin-left: 30px;
+    }
+    .sub-design {
+        background-color: $design-hover;
+        display: none;
+        left: -390px;
+    }
+    .sub-it {
+        background-color: $it-hover;
+        display: none;
+        left: -570px;
+    }
+    .sub-telecom {
+        background-color: $telecom-hover;
+        display: none;
+        left: -770px;
+    }
+    .sub-software {
+        background-color: $software-hover;
+        display: none;
+        left: -970px;
+    }
+    .sub-marketing {
+        background-color: $marketing-hover;
+        display: none;
+        left: -1170px;
+    }
+    .sub-cyber {
+        background-color: $cyber-hover;
+        display: none;
+        left: -1370px;
+    }
+}
+
+.nav-link-design:hover {
+    .sub-design {
+        display: block;
+    }
+}
+.nav-link-it:hover {
+    .sub-it {
+        display: block;
+    }
+}
+.nav-link-telecom:hover {
+    .sub-telecom {
+        display: block;
+    }
+}
+.nav-link-software:hover {
+    .sub-software {
+        display: block;
+    }
+}
+.nav-link-marketing:hover {
+    .sub-marketing {
+        display: block;
+    }
+}
+.nav-link-cyber:hover {
+    .sub-cyber {
+        display: block;
+    }
+}
+
+
+//Banner slideshow
+
+.banner-wrapper {
+    height: 100%;
+}
+
+
+.owl-carousel {
+    width: 100%;
+    height: 100%;
+    div:not(.owl-controls) {
+		height: 100%;
+	}
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1.25rem;
+        margin-bottom: 35px;
+        line-height: 2.25rem;
+    }
+    a {
+        padding: 5px 20px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        min-height: 62px;
+        max-width: 225px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+    }
+    h1,
+    p,
+    a {
+        z-index: 2;
+    }
+    i {
+        margin-left: 12px;
+    }
+}
+
+.slide::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slide-1 {
+    background-image: url(../images/home.jpg);
+    a {
+        background-color: $design;
+        &:hover {
+            background-color: $design-hover;
+        }
+    }
+}
+.slide-2 {
+    background-image: url(../images/home-57sJ.jpg);
+    a {
+        background-color: $it;
+        &:hover {
+            background-color: $it-hover;
+        }
+    }
+}
+.slide-3 {
+    background-image: url(../images/home-5yqm.jpg);
+    a {
+        background-color: $telecom;
+        &:hover {
+            background-color: $telecom-hover;
+        }
+    }
+}
+.slide-4 {
+    background-image: url(../images/home-sqvx.jpg);
+    a {
+        background-color: $software;
+        &:hover {
+            background-color: $software-hover;
+        }
+    }
+}
+.slide-5 {
+    background-image: url(../images/home-JQsO.jpg);
+    a {
+        max-width: 346px;
+        background-color: $marketing;
+        &:hover {
+            background-color: $marketing-hover;
+        }
+    }
+}
+.slide-6 {
+    background-image: url(../images/home-lQs1.jpg);
+    a {
+        background-color: $cyber;
+        &:hover {
+            background-color: $cyber-hover;
+        }
+    }
+}
+
+.owl-dots {
+    height: 30px !important;
+    position: absolute;
+    bottom: 35px;
+    margin: 0px;
+    width: 100%;
+    
+}
+
+.owl-theme .owl-dots .owl-dot span, 
+.owl-theme .owl-dots  span {
+    background: #ccc;
+    width: 11px;
+    height: 11px;
+}
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #fff;
+    position: relative;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    &::after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        }
+}
+
+.owl-dot {
+    width: 31px;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    outline: none;
+}
+
+
+
+
+//Read more section
+
+.read-more-wrapper {
+    padding: 50px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        display: flex;
+        flex-direction: column;       // using align items to center the flex items.
+        align-items: center;
+        text-decoration: none;
+        padding: 30px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-top: 30px;
+        &:hover {
+            .card-line {
+                background-color: #fff;
+            }
+            .rm-header,
+            .rm-p {
+            color: #fff;
+            }
+        }
+        .read-more-icon{
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rm-header {
+            color: #000;
+            margin-bottom: 17px;
+            font-size: 18px;
+        }
+        .card-line {
+            width:28px;
+            height:3px;
+            display: block;
+            margin-bottom: 11px;
+            background-color:#000;
+        }
+        .rm-p {
+            color: #000;
+            margin-bottom: 13px;
+            font-size: 13px;
+        }
+        .rm-btn {
+            width: 130px;
+            height: 47px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .software-rm {
+            background-color: $software;
+            color: #fff;
+        }
+        .support-rm {
+            background-color: $it;
+            color: #fff;
+        }
+        .marketing-rm {
+            background-color: $marketing;
+            color: #fff;
+        }
+        .telecom-rm {
+            background-color: $telecom;
+            color: #fff;
+        }
+        .design-rm {
+            background-color: $design;
+            color: #fff;
+        }
+        .cyber-rm {
+            background-color: $cyber;
+            color: #fff;
+        }
+    }   
+}
+
+.software-card:hover {                                     // Code for the cards to inverst color on hover
+    background-color: $software;
+    .software-rm {
+        background-color: #fff;
+        color: $software;
+    }
+    
+}
+.support-card:hover {
+    background-color: $support;
+    .support-rm {
+        background-color: #fff;
+        color: $support;
+    }
+    
+}
+.marketing-card:hover {
+    background-color: $marketing;
+    .marketing-rm {
+        background-color: #fff;
+        color: $marketing;
+    }
+    
+}
+.telecom-card:hover {
+    background-color: $telecom;
+    .telecom-rm {
+        background-color: #fff;
+        color: $telecom;
+    }
+    
+}
+.design-card:hover {
+    background-color: $design;
+    .design-rm {
+        background-color: #fff;
+        color: $design;
+    }
+    
+}
+.cyber-card:hover {
+    background-color: $cyber;
+    .cyber-rm {
+        background-color: #fff;
+        color: $cyber;
+    }
+    
+}
+
+// About Us section
+
+.about-us-bg {
+    background-image: url(../images/branded.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right;
+    background-color: $brand-color;
+    color: #fff;
+    .about-us-content {
+        padding: 50px 15px;
+    }
+    p {
+        margin-bottom: 25px;
+        line-height: 30px;
+    }
+    h1 {
+        margin-bottom: 25px; 
+    } 
+    .btn {
+        width: 173px;
+        height: 47px;
+        background-color: #fff;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            margin-left: 15px;
+        }
+    }
+}
+
+//Latest section 
+
+.latest-title {
+        display: flex;
+        justify-items: center;
+        flex-direction: column;
+    div {
+        padding: 40px 0px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    span {
+        height: 5px;
+        width: 70px;
+        background-color: $brand-color;
+    }
+}
+
+.latest-bg {
+    padding: 50px 0px;
+}
+
+.latest-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .latest-img-wrapper {
+        overflow: hidden;
+        img {
+            width: 100%;
+            border-radius: 2px;
+            &:hover {
+                transform: scale(1.1); 
+                transition-duration: 200ms;
+                opacity: 75%;
+            }
+            transition-duration: 200ms;     // code to transition when hover off
+            scale: 1;
+    }
+    }
+    .card-content {
+        border: 1px solid #ccc;
+        padding: 30px;
+        .card-bottom {
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 30px;
+            display: flex;
+            font-size: 14px;
+        }
+        img {
+            width: 47px;
+            height: 47px;
+        }
+        .card-posted {
+            padding-left: 20px;
+        }
+    }
+    .l-link {
+        margin-bottom: 15px;
+        display: inline-block;
+        height: 48px;
+    }
+    p {
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+    .btn {
+        width: 130px;
+        height: 47px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-1,
+    .card-2 {
+        .l-link {
+            color: $design;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .btn {
+            background-color: $design;
+            &:hover {
+                background-color: $design-hover;
+            }
+        }
+    }
+    .card-3 {
+        .l-link {
+            color: $cyber;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .btn {
+            background-color: $telecom;
+            &:hover {
+                background-color: $telecom-hover;
+            }
+        }
+    }
+}
+
+// Client Section
+
+.client-content {
+    display: flex;
+    padding: 50px 0px;
+    max-height: 170px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .client-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+        margin: 0px 20px;
+        flex-grow: 1;
+        position: relative;
+        position: relative;
+    }
+    .c-img {
+        display: none;
+    }
+    span {                               // changes images from black and white to coloured
+        &:hover{
+            .bw-img{
+            display: none;
+            }
+            .c-img {
+                display: inline;
+            }
+        }
+    }
+}
+
+.client-tooltip {
+    padding: 20px 20px 20px 20px;
+    background-color: $brand-color;
+    max-width: 250px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 120px;
+    display: none;
+    .tooltip-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    p {
+        font-size: .8125rem;
+        line-height: 1.375rem;
+        margin: 0px;
+    }
+    h3 {
+        font-size: 1.125rem;
+        margin: 0px;
+    }
+    .tooltip-line {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        display: block;
+        margin: 10px 0px;
+    }
+}
+.tooltip-arrow {
+    bottom: 50px;
+    display: none;
+}
+
+.client-wrapper {
+    i {
+        font-size: 125px;
+        position: absolute;
+        color: $brand-color;
+    }
+    &:hover {
+        .client-tooltip,
+        .tooltip-arrow {
+            display: block;
+        }
+    }
+}
+
+
+.busseys-tooltip {
+    i {
+        top: 70px;
+    }
+}
+.crane-tooltip {
+    i {
+        top: 115px;
+    }
+}
+.beat-tooltip {
+    width: 250px;
+    i {
+        top: 70px;
+    }
+}
+.diver-tooltip {
+    i{
+        top: 115px;
+    } 
+}
+
+
+// Footer Section
+
+.footer {
+    background-color: $brand-color;
+    color: #fff;
+    .container {
+        padding: 45px 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    ul {
+        list-style: none;
+        padding: 0px;
+    }
+    a {
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+    }
+    .btn {
+        display: block;
+        a {
+            display: block;
+            background-color: rgba(0,0,0,.25);
+            margin-top: 20px;
+            font-size: 1.75rem;
+            line-height: 3.438rem;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
+    h4 {
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        font-size: 1rem;
+    }
+    li {
+        font-size: 14px;
+        line-height: 1.375rem;
+    }
+    .social-btn-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -25px -15px 0px -15px;
+    }
+    .facebook-btn {
+        a:hover {
+            background-color: #3b5998;
+        }
+    }
+    .twitter-btn {
+        a:hover {
+            background-color: #00aced;
+        }
+    }
+    .linkedin-btn {
+        a:hover {
+            background-color: #0077b5;
+        }
+    }
+}
+
+//Credentials Section 
+
+.credentials-wrapper {
+    padding: 50px 0px;
+    .credentials {  
+        display: flex;
+        text-align: center;
+        div {
+            padding: 0 20px;
+            position: relative;
+            flex-grow: 1;    
+        }
+        .c-img {
+            display: none;
+        }
+        span {                               // changes images from black and white to coloured
+            &:hover{
+                .bw-img{
+                display: none;
+                }
+                .c-img {
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+
+
+// Cookie Popup
+
+.cookie-wrapper {                                           //==========
+    position: fixed;                                        // used to position the pop up and darken the background.
+    top: 0;                                                 //==========
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cookie-hidden {
+    display: none;
+}
+
+
+#cookie-popup {
+    border: 1px solid #000;
+
+    line-height: 30px;
+    width: 600px;
+    height: 492px;
+    border-radius: 5px;
+    background-color: #fff;
+    .cookie-head {
+        padding: 15px 20px;
+    }
+    .cookie-body,
+    .cookie-bottom {
+        padding: 20px;
+        border-top: 1px solid #ccc;
+    }
+    p {
+        margin-bottom: 25px;
+    }
+    .cookie-bottom {
+        display: flex;
+    }
+    a {
+        padding: 5px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        min-height: 47px;
+        color: #fff;
+        border-radius: 3px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .cookie-accept {
+        background-color: $contact;
+        &:hover {
+            background-color: $contact-hover;
+        }
+    }
+    .cookie-settings {
+        background-color: $design;
+        &:hover {
+            background-color: $design-hover;
+        }
+    }
+}
+
+//==========
+// contact page
+//==========
+
+.contact-wrapper {
+    padding: 50px 0px;
+    min-height: 500px;
+}   
+
+.contact-content {
+    width: 100%;
+    max-width: 800px;
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        input {
+            margin-bottom: 20px;
+        }
+        span {
+            color: #ff0000;
+        }
+        .contact-form-btn {
+            padding: 5px 30px;
+            background-color: $brand-color;
+            color: #fff;
+            border: 1px solid $brand-color;
+            border-radius: 3px;
+            margin-top: 10px;
+            &:hover {
+                background-color: #fff;
+                color: $brand-color;
+            }
+        }
+    }
+    div {
+        margin: 0px;
+    }
+    .contact-name,
+    .contact-email,
+    .contact-tel,
+    .contact-sub {
+        max-width: 470px;
+        max-height: 47px;
+        min-height: 47px;
+    }
+    .contact-message {
+        max-width: 770px;
+    }
+    .contact-form-global {
+        width: 100%; 
+    }
+    .contact-hidden-msg {
+        display: none;
+    }
+    .contact-success-msg {
+        display: block;
+    }
+}
+.contact-error-page {
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+        color: red;
+        margin-bottom: 20px;
+    }
+    a {
+        padding: 20px 50px;
+        display: block;
+        color: #fff;
+        background-color: $brand-color;
+        width: 50%;
+        text-align: center;
+        border-radius: 3px;
+    }
+}
+
+.contact-success-page {
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+        color: green;
+    }
+    a {
+        padding: 20px 50px;
+        display: block;
+        margin-top: 20px;
+        color: #fff;
+        background-color: $brand-color;
+        width: 50%;
+        text-align: center;
+        border-radius: 3px;
+    }
+}
+//==========
+// Media Queries
+//==========
+
+// section to change the bootstrap containers max widths.
+
+@media (min-width: 1260px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1259px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 750px;
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+// =====================================================
+
+@media (min-width:768px) and (max-width:1259px) {
+    .action-bar {
+        justify-content: flex-end;
+    }
+    .card-3 {
+        display: none;
+    }
+    .footer-spacer {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1259px) {
+    .credentials {
+        img {
+        width: 100%;
+        height: auto;
+        }
+    }
+}
+
+@media (min-width: 1201px) and (max-width:1259px) {      //changes the bootstrap col max width     
+    .header-wrapper {                                   
+        .col-xl-4 {
+            max-width: 41.6667%;
+            flex: 0 0 41.6667%;
+        }
+        .col-xl-8 {
+            max-width: 58.3333%;
+            flex: 0 0 58.3333%;
+        }
+    }
+    .about-us-bg {
+        .col-xl-6 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+    .latest-content {
+        .col-xl-4 {                                  
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+    .read-more-wrapper,
+    .footer {
+        .col-xl-3 {                                 
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+    }    
+}
+
+@media (min-width: 992px) and (max-width: 1259px) {
+    .action-bar {
+        .support-btn,
+        .contact-btn,
+        div {
+            margin-left: 20px;
+        }
+        .search-btn {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+        .search-bar {
+            display: none;
+        }
+        .menu-btn {
+            margin-left: 20px;
+        }
+    }
+    .nav-item {
+        .nav-sub-menu {
+            a {
+                font-size: 13px;
+            }
+            .text-pad {
+                padding-left: 20px;
+            }
+        }
+        .sub-menu-a-line {
+            margin-left: 20px;
+        }
+        .sub-design {
+            left: -450px;
+        }
+        .sub-it {
+            left: -570px;
+        }
+        .sub-telecom {
+            left: -770px;
+        }
+        .sub-software {
+            left: -950px;
+        }
+        .sub-marketing {
+            left: -1000px;
+        }
+        .sub-cyber {
+            left: -1230px;
+        }
+    }
+} 
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .rm-p {
+        min-height: 58.5px;
+    }
+    .search-bar {
+        max-width: 174px;
+    }
+    .menu-btn {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 991px) {           
+    .nav-wrapper {
+        display: none;
+    }
+    .action-bar {
+        justify-content: flex-end;
+        .support-btn,
+        .contact-btn {
+            display: none;
+        }
+    }
+    .brand-logo {
+        flex-shrink: 0;
+    }
+    .banner-content {
+        align-items: center;
+        text-align: center;
+    }
+    .mm-menu {                                      // off canvas menu width.
+        max-width: 275px;
+    }
+    .hidden-mobile-menu {
+        display: flex;
+    }
+} 
+
+
+@media (max-width: 767px) {
+    .brand-logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 1;
+        img {
+            max-width: 402px;
+        }
+    }
+    .action-bar {
+        justify-content: flex-end;
+        width: 100%;
+        .search-bar,
+        .search-btn {
+            display: none;
+        }
+        .menu-btn {
+            margin-left: 10px;
+        }
+        .support-btn,
+        .contact-btn {
+            margin-right: 20px;
+            i {
+                font-size: 24px;
+                margin: 0px;
+            }
+        }
+    }
+    .hidden-phone {
+        i {
+            display: block;
+        }
+    }
+    .hidden-search-bar {
+        display: flex;
+    }
+    .card-2,
+    .card-3 {
+        margin-top: 30px;    
+    }
+    .footer-spacer,
+    .footer-spacer-sm {
+        margin-bottom: 30px;
+    }
+    .client-content,
+    .credentials-wrapper {
+        display: none;                                    //hides he client and credentials images below 768px
+    }
+}
+
+
+@media (max-width: 450px) {
+    .header-wrapper {
+        .col-9 {
+            max-width: 66.6667%;
+            flex: 0 0 66.6667%;
+        }
+        .col-3 {
+            max-width: 33.3333%;
+            flex: 0 0 33.3333%;
+        }
+    }
+}
+@media (max-width: 345px) {
+    .mm-menu {
+        width: 100%;
+        min-width: 280px;
+    }
+}
+
+@media all and (min-width:992px) {                                                        //========================
+    .mm-wrapper_opening .mm-menu_position-right.mm-menu_opened~.mm-slideout {             // Fixes the distance the page slides out when off canvas menu is open.
+        -webkit-transform:translate3d(-333px,0,0);                                        //========================
+        transform:translate3d(-333px,0,0);                          
+    }
+}
+@media all and (max-width:991px) {                                                        
+    .mm-wrapper_opening .mm-menu_position-right.mm-menu_opened~.mm-slideout {             
+        -webkit-transform:translate3d(-275px,0,0);                                        
+        transform:translate3d(-275px,0,0);
+    }
+}                                                                                         
+
+body{
+    overflow:initial !important; //fix scroll bar issue with menu
+    overflow-x: hidden !important;
+}
+
+// <img class="testimg" src=" <?php echo $row["img"]; ?> " >
